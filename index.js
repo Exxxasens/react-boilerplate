@@ -8,7 +8,7 @@ app.get('/ping', function (req, res) {
     return res.send('pong');
 });
 
-app.get('/', (req, res) => {
+app.use((req, res, next) => {
     return res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 
